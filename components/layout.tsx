@@ -1,21 +1,21 @@
-import React from "react"
+import React, { Children, useState } from "react"
 import styled from "styled-components"
 
 type test = {
-    hi: string;
+  hi: string
 }
 
 const Container = styled.div`
   margin: 3rem auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 99vh;
-  background-color: red;
+  height: 100vh;
+  border: 10px solid black;
+  position: relative;
+
 `
 
-const layout = (props: test) => {
-  return <Container>Hello world 231!</Container>
+
+const layout: React.FC<test> = (props) => {
+  return <Container>{props.children}</Container>
 }
 
 export default layout
